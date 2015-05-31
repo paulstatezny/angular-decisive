@@ -1,2 +1,1 @@
-/* global angular */
-'use strict';
+require('angular');

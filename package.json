@@ -11,5 +11,19 @@
     "url": "git@bitbucket.org:PaulStatezny/angular-decisive.git"
   },
   "author": "Paul Statezny",
-  "license": "Proprietary"
+  "license": "Proprietary",
+  "dependencies": {
+    "css-loader": "^0.12.0",
+    "file-loader": "^0.8.1",
+    "html-webpack-plugin": "^1.3.0",
+    "jshint": "^2.7.0",
+    "jshint-loader": "^0.8.3",
+    "style-loader": "^0.12.0",
+    "webpack": "^1.8.10",
+    "webpack-dev-server": "^1.8.2"
+  },
+  "devDependencies": {
+    "babel-core": "^5.4.3",
+    "babel-loader": "^5.1.2"
+  }
 }

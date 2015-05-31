@@ -1,0 +1,2 @@
+/* global angular */
+'use strict';

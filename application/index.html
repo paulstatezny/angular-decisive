@@ -13,9 +13,19 @@
         <script src="app.js"></script>
     </head>
     <body>
-        <p>Nothing here {{'yet' + '!'}}</p>
-        <div ng-controller="GreetingController">
-            {{ greeting }}
+        <div ng-controller="MathController">
+            <input type="text" ng-model="customAdjective" />
+            <button ng-click="setAdjective('happy')">Happy</button>
+            <button ng-click="setAdjective('sad')">Sad</button>
+            <button ng-click="setAdjective(customAdjective)">Custom</button>
+            Cuz I'm so {{ adjective }}.
+            And my name is {{ name }}.
+            <div ng-controller="FooController">
+                Also, I'm very {{ adjective }}.
+                <div ng-controller="BarController">
+                    And {{ name }} is me and I'm {{ adjective }}.
+                </div>
+            </div>
         </div>
     </body>
 </html>

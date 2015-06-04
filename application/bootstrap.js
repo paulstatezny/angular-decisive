@@ -13,3 +13,9 @@ app.directive('sidebar', function () {
         templateUrl: 'partials/sidebar.html'
     };
 });
+
+app.directive('grid', function () {
+    return {
+        templateUrl: 'partials/grid.html'
+    };
+});

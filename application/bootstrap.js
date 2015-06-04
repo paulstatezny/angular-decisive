@@ -1,20 +1,15 @@
+require('./partials');
+require('./css/app.css');
+
 var angular = require('angular');
+var app     = angular.module('app', []);
 
-var app = angular.module('app', []);
+app.controller('AppController', [
+    require('./controllers/app-controller')
+]);
 
-app.controller('MathController', ['$scope', function ($scope) {
-    $scope.setAdjective = function (adjective) {
-        $scope.adjective = adjective;
+app.directive('sidebar', function () {
+    return {
+        templateUrl: 'partials/sidebar.html'
     };
-
-    $scope.adjective = 'boring';
-    $scope.name = 'Paul';
-}]);
-
-app.controller('FooController', ['$scope', function ($scope) {
-    $scope.adjective = 'Woot';
-}]);
-
-app.controller('BarController', ['$scope', function ($scope) {
-    $scope.name = 'Hahaha';
-}]);
+});

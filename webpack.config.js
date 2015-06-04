@@ -18,6 +18,14 @@ module.exports = {
                 test    : /\.js$/,
                 loaders : ['babel'],
                 exclude : npmPath
+            },
+            {
+                test    : /\.html$/,
+                loaders : ['file?name=partials/[name].[ext]']
+            },
+            {
+                test    : /\.css$/,
+                loaders : ['file?name=css/[name].[ext]']
             }
         ]
     },

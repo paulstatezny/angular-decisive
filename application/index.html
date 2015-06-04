@@ -8,24 +8,33 @@
         <meta name="og:site_name" content="Decisive">
         <meta name="og:type" content="website">
         <meta name="og:description" content="The elegant, free Eisenhower Matrix app">
-        <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
         <title>Decisive</title>
         <script src="app.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/app.css">
     </head>
     <body>
-        <div ng-controller="MathController">
-            <input type="text" ng-model="customAdjective" />
-            <button ng-click="setAdjective('happy')">Happy</button>
-            <button ng-click="setAdjective('sad')">Sad</button>
-            <button ng-click="setAdjective(customAdjective)">Custom</button>
-            Cuz I'm so {{ adjective }}.
-            And my name is {{ name }}.
-            <div ng-controller="FooController">
-                Also, I'm very {{ adjective }}.
-                <div ng-controller="BarController">
-                    And {{ name }} is me and I'm {{ adjective }}.
+        <div className='container'>
+            <sidebar grids="{grids}"></sidebar>
+            <main className='content'>
+                <div className='content__top-gutter'>
+                    <div className='top-gutter__corner'></div>
+                    <div className='top-gutter__main'>
+                        <div className='top-gutter__header top-gutter__header--blue priority-label'>Urgent</div>
+                        <div className='top-gutter__header priority-label'>Not Urgent</div>
+                    </div>
                 </div>
-            </div>
+                <div className='content__under-top-gutter'>
+                    <div className='left-gutter'>
+                        <div className='left-gutter__header left-gutter__header--blue'>
+                            <span className='left-gutter__header__text left-gutter__header__text--top priority-label'>Important</span>
+                        </div>
+                        <div className='left-gutter__header'>
+                            <span className='left-gutter__header__text left-gutter__header__text--bottom priority-label'>Not Important</span>
+                        </div>
+                    </div>
+                    <grid tasks="{tasks}"></grid>
+                </div>
+            </main>
         </div>
     </body>
 </html>

@@ -2,11 +2,17 @@ require('./partials');
 require('./css/app.css');
 
 var angular = require('angular');
-var app     = angular.module('app', []);
+require('angular-route');
 
-app.controller('AppController', [
-    require('./controllers/app-controller')
-]);
+var app = angular.module('app', ['ngRoute']);
+
+app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+
+    $routeProvider.when('/secret', {
+        templateUrl : 'partials/secret.html'
+    });
+}]);
 
 app.directive('sidebar', function () {
     return {
@@ -16,6 +22,6 @@ app.directive('sidebar', function () {
 
 app.directive('grid', function () {
     return {
-        templateUrl: 'partials/grid.html'
+        templateUrl: 'partials/grid.html',
     };
 });

@@ -3,8 +3,9 @@ require('./css/app.css');
 
 var angular = require('angular');
 require('angular-route');
+require('ng-storage');
 
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute', 'ngStorage']);
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
@@ -20,7 +21,8 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 
 app.directive('sidebar', function () {
     return {
-        templateUrl: 'partials/sidebar.html'
+        templateUrl: 'partials/sidebar.html',
+        controller : 'Sidebar'
     };
 });
 
@@ -29,3 +31,7 @@ app.directive('grid', function () {
         templateUrl: 'partials/grid.html',
     };
 });
+
+app.controller('Sidebar', ['$scope', '$localStorage', function ($scope, $localStorage) {
+    $scope.$storage = $localStorage;
+}]);

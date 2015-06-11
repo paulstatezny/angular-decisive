@@ -46,5 +46,12 @@ app.controller('Sidebar', ['$scope', function ($scope) {
 }]);
 
 app.controller('Grid', ['$scope', function ($scope) {
-    $scope.grid = $scope.$storage.grids[$scope.selectedGrid];
+    $scope.tasks = $scope.$storage.grids[$scope.selectedGrid].tasks;
+
+    $scope.hint  = {
+        do       : 'Do these things now.',
+        plan     : 'Plan a time to do these later.',
+        delegate : 'Is someone else available to do these?',
+        delay    : 'Save these tasks for your free time.'
+    };
 }]);

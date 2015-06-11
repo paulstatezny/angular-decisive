@@ -1,40 +1,10 @@
-<div class='grid'>
-    <div class='grid__quadrant grid__quadrant--do'>
-        <p class='quadtrant__hint'>Do these things now.</p>
-        <ul class='checklist'>
-            <li class='add-new'>
+<div class="grid">
+    <div ng-repeat="taskType in ['do', 'plan', 'delegate', 'delay']" class="grid__quadrant grid__quadrant--{{taskType}}">
+        <p class="quadtrant__hint">{{hint[taskType]}}</p>
+        <ul class="checklist">
+            <li class="add-new">
                 <form onSubmit={this.addTask}>
-                    <input type='text' placeholder='Click to add item...'>
-                </form>
-            </li>
-        </ul>
-    </div>
-    <div class='grid__quadrant grid__quadrant--plan'>
-        <p class='quadtrant__hint'>Plan a time to do these later.</p>
-        <ul class='checklist'>
-            <li class='add-new'>
-                <form onSubmit={this.addTask}>
-                    <input type='text' placeholder='Click to add item...'>
-                </form>
-            </li>
-        </ul>
-    </div>
-    <div class='grid__quadrant grid__quadrant--delegate'>
-        <p class='quadtrant__hint'>Is someone else available to do these?</p>
-        <ul class='checklist'>
-            <li class='add-new'>
-                <form onSubmit={this.addTask}>
-                    <input type='text' placeholder='Click to add item...'>
-                </form>
-            </li>
-        </ul>
-    </div>
-    <div class='grid__quadrant grid__quadrant--later'>
-        <p class='quadtrant__hint'>Save these tasks for your free time.</p>
-        <ul class='checklist'>
-            <li class='add-new'>
-                <form onSubmit={this.addTask}>
-                    <input type='text' placeholder='Click to add item...'>
+                    <input type='text' placeholder="Click to add item...">
                 </form>
             </li>
         </ul>

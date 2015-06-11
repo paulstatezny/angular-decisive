@@ -185,7 +185,7 @@ html, body, .container {
     background-color: #C1DAF8;
 }
 
-.grid__quadrant--later, .logo__block--bottom-right {
+.grid__quadrant--delay, .logo__block--bottom-right {
     background-color: #EEE;
 }
 

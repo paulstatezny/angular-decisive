@@ -11,7 +11,8 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     $locationProvider.html5Mode(true);
 
     $routeProvider.when('/', {
-        templateUrl : 'partials/application.html'
+        templateUrl : 'partials/application.html',
+        controller  : 'Application'
     });
 
     $routeProvider.when('/secret', {
@@ -31,6 +32,10 @@ app.directive('grid', function () {
         templateUrl: 'partials/grid.html',
     };
 });
+
+app.controller('Application', ['$scope', function ($scope) {
+    $scope.selectedGrid = 0;
+}]);
 
 app.controller('Sidebar', ['$scope', '$localStorage', function ($scope, $localStorage) {
     $scope.$storage = $localStorage;

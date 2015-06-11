@@ -9,7 +9,10 @@
     <div>
         <h3>Grids</h3>
         <ul>
-            <li ng-repeat="grid in $storage.grids">{{grid.name}}</li>
+            <li ng-repeat="(index, grid) in $storage.grids">
+                {{grid.name}}
+                {{index === selectedGrid ? '*' : ''}}
+            </li>
             <li>Add Grid</li>
         </ul>
     </div>

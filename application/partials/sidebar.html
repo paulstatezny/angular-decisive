@@ -9,7 +9,8 @@
     <div>
         <h3>Grids</h3>
         <ul>
-            <li onClick={this.addGrid}>Add Grid</li>
+            <li ng-repeat="grid in $storage.grids">{{grid.name}}</li>
+            <li>Add Grid</li>
         </ul>
     </div>
 </nav>

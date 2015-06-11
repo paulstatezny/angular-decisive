@@ -30,13 +30,21 @@ app.directive('sidebar', function () {
 app.directive('grid', function () {
     return {
         templateUrl: 'partials/grid.html',
+        controller : 'Grid'
     };
 });
 
-app.controller('Application', ['$scope', function ($scope) {
+app.controller('Application', ['$scope', '$localStorage', function ($scope, $localStorage) {
+    $scope.$storage     = $localStorage;
     $scope.selectedGrid = 0;
 }]);
 
-app.controller('Sidebar', ['$scope', '$localStorage', function ($scope, $localStorage) {
-    $scope.$storage = $localStorage;
+app.controller('Sidebar', ['$scope', function ($scope) {
+    $scope.selectGrid = function (grid) {
+        $scope.selectedGrid = grid;
+    };
+}]);
+
+app.controller('Grid', ['$scope', function ($scope) {
+    $scope.grid = $scope.$storage.grids[$scope.selectedGrid];
 }]);

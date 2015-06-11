@@ -9,7 +9,7 @@
     <div>
         <h3>Grids</h3>
         <ul>
-            <li ng-repeat="(index, grid) in $storage.grids">
+            <li ng-repeat="(index, grid) in $storage.grids" ng-click="selectGrid(index)">
                 {{grid.name}}
                 {{index === selectedGrid ? '*' : ''}}
             </li>

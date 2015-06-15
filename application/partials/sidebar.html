@@ -14,7 +14,7 @@
                 {{index === selectedGrid ? '*' : ''}}
                 <span ng-click="$event.stopPropagation(); deleteGrid(index)">X</span>
             </li>
-            <li>Add Grid</li>
+            <li ng-click="addGrid()">Add Grid</li>
         </ul>
     </div>
 </nav>

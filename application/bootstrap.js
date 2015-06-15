@@ -55,6 +55,24 @@ app.controller('Sidebar', ['$scope', function ($scope) {
 
         $scope.$storage.grids.splice(index, 1);
     };
+
+    $scope.addGrid = function () {
+        var name = window.prompt('Enter the name of the grid');
+
+        if (! name) {
+            return;
+        }
+
+        $scope.$storage.grids.push({
+            name  : name,
+            tasks : {
+                do       : [],
+                plan     : [],
+                delegate : [],
+                delay    : []
+            }
+        });
+    };
 }]);
 
 app.controller('Grid', ['$scope', function ($scope) {

@@ -2,7 +2,10 @@
     <div ng-repeat="taskType in ['do', 'plan', 'delegate', 'delay']" class="grid__quadrant grid__quadrant--{{taskType}}">
         <p class="quadtrant__hint">{{hint[taskType]}}</p>
         <ul class="checklist">
-            <li ng-repeat="(index, task) in tasks[taskType]" class="{{task.completed ? 'checklist__item--checked' : ''}}">
+            <li
+                ng-repeat="(index, task) in grids[selectedGrid].tasks[taskType]"
+                class="{{task.completed ? 'checklist__item--checked' : ''}}"
+            >
                 <label>
                     <input type='checkbox' ng-model="task.completed" />
                     {{task.task}}

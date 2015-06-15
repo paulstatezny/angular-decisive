@@ -46,7 +46,7 @@ app.controller('Sidebar', ['$scope', function ($scope) {
 }]);
 
 app.controller('Grid', ['$scope', function ($scope) {
-    $scope.tasks = $scope.$storage.grids[$scope.selectedGrid].tasks;
+    $scope.grids = $scope.$storage.grids;
 
     $scope.hint  = {
         do       : 'Do these things now.',
@@ -63,7 +63,7 @@ app.controller('Grid', ['$scope', function ($scope) {
     };
 
     $scope.addTask = function (taskType) {
-        $scope.tasks[taskType].push({
+        $scope.grids[$scope.selectedGrid].tasks[taskType].push({
             task      : $scope.newTask[taskType],
             completed : false
         });
@@ -72,6 +72,6 @@ app.controller('Grid', ['$scope', function ($scope) {
     };
 
     $scope.deleteTask = function (taskType, index) {
-        $scope.tasks[taskType].splice(index, 1);
+        $scope.grids[$scope.selectedGrid].tasks[taskType].splice(index, 1);
     };
 }]);

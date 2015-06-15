@@ -54,4 +54,24 @@ app.controller('Grid', ['$scope', function ($scope) {
         delegate : 'Is someone else available to do these?',
         delay    : 'Save these tasks for your free time.'
     };
+
+    $scope.newTask = {
+        do       : '',
+        plan     : '',
+        delegate : '',
+        delay    : ''
+    };
+
+    $scope.addTask = function (taskType) {
+        $scope.tasks[taskType].push({
+            task      : $scope.newTask[taskType],
+            completed : false
+        });
+
+        $scope.newTask[taskType] = '';
+    };
+
+    $scope.deleteTask = function (taskType, index) {
+        $scope.tasks[taskType].splice(index, 1);
+    };
 }]);

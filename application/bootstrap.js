@@ -43,6 +43,18 @@ app.controller('Sidebar', ['$scope', function ($scope) {
     $scope.selectGrid = function (grid) {
         $scope.selectedGrid = grid;
     };
+
+    $scope.deleteGrid = function (index) {
+        if (! window.confirm('Are you sure you want to delete this grid?')) {
+            return;
+        }
+
+        if ($scope.selectedGrid === index) {
+            $scope.selectedGrid = 0;
+        }
+
+        $scope.$storage.grids.splice(index, 1);
+    };
 }]);
 
 app.controller('Grid', ['$scope', function ($scope) {

@@ -12,6 +12,7 @@
             <li ng-repeat="(index, grid) in $storage.grids" ng-click="selectGrid(index)">
                 {{grid.name}}
                 {{index === selectedGrid ? '*' : ''}}
+                <span ng-click="$event.stopPropagation(); deleteGrid(index)">X</span>
             </li>
             <li>Add Grid</li>
         </ul>
